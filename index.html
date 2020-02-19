@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form validation 1</title>
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+	
+	<div class="login">
+
+		<h1>Sign Up</h1>
+		<h3></h3>
+
+		<hr>
+
+		<label for="">Name</label>
+		<input id="name" type="text">
+		<p id="name"></p>
+
+		<label for="">Email</label>
+		<input id="email" type="text">
+		<p id="email"></p>
+
+		<label for="">Cell</label>
+		<input id="cell" type="number">
+		<p id="cell"></p>
+
+		<label for="">Password</label>
+		<input  id="pass" type="password">
+		<p id="pass"></p>
+
+		<button> Sign Up</button>
+	
+	</div>
+
+	
+
+	<script src="assets/js/jquery-3.4.1.min.js"></script>
+	<script>
+		$('.login button').click(function(){
+
+			let name = $('.login input#name').val();
+			let email = $('.login input#email').val();
+			let cell = $('.login input#cell').val();
+			let pass = $('.login input#pass').val();
+
+			if( name == '' ){
+				$('.login p#name').html('<span style="color:red;"> * Required </span>');
+				$('.login input#name').css('border', '1px solid red');
+			}
+			else{
+				$('.login p#name').html('');
+				$('.login input#name').css('border', '1px solid #333');
+			}
+
+			if( email == '' ){
+				$('.login p#email').html('<span style="color:red;"> * Required </span>');
+				$('.login input#email').css('border', '1px solid red');
+			}
+			else{
+				$('.login p#email').html('');
+				$('.login input#email').css('border', '1px solid #333');
+			}
+
+			if( cell == '' ){
+				$('.login p#cell').html('<span style="color:red;"> * Required </span>');
+				$('.login input#cell').css('border', '1px solid red');
+			}
+			else{
+				$('.login p#cell').html('');
+				$('.login input#cell').css('border', '1px solid #333');
+			}
+
+			if( pass == '' ){
+				$('.login p#pass').html('<span style="color:red;"> * Required </span>');
+				$('.login input#pass').css('border', '1px solid red');
+			}
+			else{
+				$('.login p#pass').html('');
+				$('.login input#pass').css('border', '1px solid #333');
+			}
+
+
+
+		});
+	</script>
+</body>
+</html>
